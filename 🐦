@@ -1,0 +1,21 @@
+setCpm(150/4)
+
+$: s("bd").beat("0,7,10", 16)
+$: s("sd").beat("4,12", 16).decay(.2)
+$: s("hh:3!8").sometimesBy(.4, x=>x.speed("0.5"))
+  .delay(.2)
+  .gain(1)
+
+$: s("shaker_large!8")
+  .gain(.6)
+  .almostNever(ply("2 | 4"))
+
+$: s("gm_bird_tweet/8")
+  .delay(.7)
+  .delayfeedback("<.25 .5 >")
+  .room(.4)
+  .phaser(1)
+  .phasersweep("<800 2000 4000>")
+
+// // rhythm generator
+// $: s("bd!16?").ribbon(29,.5)
